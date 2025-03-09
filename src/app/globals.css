@@ -85,10 +85,8 @@
     background-color: var(--background);
     color: var(--foreground);
   }
-}
 
-/* Custom Animations */
-@layer utilities {
+  /* Keyframes - Move outside of @layer */
   @keyframes gradient {
     0%, 100% {
       background-position: 0% 50%;
@@ -96,11 +94,6 @@
     50% {
       background-position: 100% 50%;
     }
-  }
-
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient 3s ease infinite;
   }
 
   @keyframes slide-in-from-right {
@@ -114,13 +107,31 @@
     }
   }
 
+  @keyframes shine {
+    0% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: -100% 50%;
+    }
+  }
+
+  /* Animation classes */
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+
+  .animate-shine {
+    animation: shine 5s linear infinite;
+  }
+
   .animate-in {
     animation-fill-mode: both;
   }
 
   .slide-in-from-right {
-    animation-name: slide-in-from-right;
-    animation-duration: 0.3s;
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation: slide-in-from-right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: both;
   }
 }
