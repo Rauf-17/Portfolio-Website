@@ -16,38 +16,72 @@ interface EducationItem {
 }
 
 const educationData: EducationItem[] = [
-    {
-        id: 3,
-        institution: "American International University-Bangladesh",
-        degree: "B.Sc. in Computer Science and Engineering",
-        period: "2025",
-        grade: "3.93/4",
-        major: "Major in Information Technology",
-        website: "https://www.aiub.edu/",
-    },
-    {
-        id: 2,
-        institution: "Bangladesh Navy College, Dhaka",
-        degree: "Higher Secondary Certificate (HSC)",
-        period: "2020",
-        grade: "5/5",
-        major: "Science",
-        website: "https://bncd.edu.bd/",
-    },
-    {
-        id: 1,
-        institution: "Banani Bidyaniketan School and College",
-        degree: "Secondary School Certificate (SSC)",
-        period: "2018",
-        grade: "5/5",
-        major: "Science",
-        website: "https://www.bbnsc.edu.bd/",
-    },
+  {
+    id: 3,
+    institution: "American International University-Bangladesh",
+    degree: "B.Sc. in Computer Science and Engineering",
+    period: "2025",
+    grade: "3.93/4",
+    major: "Major in Information Technology",
+    website: "https://www.aiub.edu/",
+  },
+  {
+    id: 2,
+    institution: "Bangladesh Navy College, Dhaka",
+    degree: "Higher Secondary Certificate (HSC)",
+    period: "2020",
+    grade: "5/5",
+    major: "Science",
+    website: "https://bncd.edu.bd/",
+  },
+  {
+    id: 1,
+    institution: "Banani Bidyaniketan School and College",
+    degree: "Secondary School Certificate (SSC)",
+    period: "2018",
+    grade: "5/5",
+    major: "Science",
+    website: "https://www.bbnsc.edu.bd/",
+  },
 ];
 
 export default function EducationSection() {
+  const getLogoPath = (id: number) => {
+    switch (id) {
+      case 3:
+        return "/uni-logo.png"; 
+      case 2:
+        return "/college-logo.png"; 
+      case 1:
+        return "/school-logo.png";
+      default:
+        return "/default.png";
+    }
+  };
+
+  const getLogoAlt = (id: number) => {
+    switch (id) {
+      case 3:
+        return "aiub";
+      case 2:
+        return "bncd";
+      case 1:
+        return "bbnsc";
+      default:
+        return "Logo";
+    }
+  };
+
   return (
-    <section id="education" className="py-20 px-4 md:px-8 lg:px-16 relative">
+    <section
+      id="education"
+      className="py-20 px-4 md:px-8 lg:px-16 relative overflow-hidden"
+    >
+      {/* Background gradient effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-background to-cyan-900/20 pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <div className="text-center mb-16">
@@ -96,7 +130,7 @@ export default function EducationSection() {
                       <div className="relative overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-primary/10 group-hover:-translate-y-1">
                         {/* Gradient Background Effect */}
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        
+
                         <div className="relative p-6">
                           {/* Institution Name */}
                           {edu.website ? (
@@ -181,10 +215,14 @@ export default function EducationSection() {
                             </div>
                           </div>
 
-                          {/* Step Number Badge */}
-                          <div className="absolute top-4 right-4">
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg">
-                              {index + 1}
+                          {/* Logo Badge (replaces numeric badge) */}
+                            <div className="absolute top-4 right-4">
+                            <div className="w-12 h-12 rounded-full bg-card flex items-center justify-center text-white font-bold text-sm shadow-lg overflow-hidden border border-border">
+                              <img
+                              src={getLogoPath(edu.id)}
+                              alt={getLogoAlt(edu.id)}
+                              className="w-9 h-9 object-contain"
+                              />
                             </div>
                           </div>
                         </div>
