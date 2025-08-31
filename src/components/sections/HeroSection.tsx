@@ -131,10 +131,10 @@ const techLogos = [
                                     size="lg"
                                     className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white rounded-full px-6 shadow-lg shadow-pink-500/30 transition-all duration-300"
                                 >
-                                    <Link href="/resume.pdf" target="_blank">
+                                    <a href="/Raufull Islam Rauf - CV.pdf" download="Raufull_Islam_Rauf_CV.pdf">
                                         <i className="pi pi-download mr-2" />
                                         GET RESUME
-                                    </Link>
+                                    </a>
                                 </Button>
                             </div>
                         </div>
