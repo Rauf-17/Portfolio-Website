@@ -204,7 +204,7 @@ style?: CSSProperties;
 
 export const LogoLoop = memo(function LogoLoop({
 logos,
-speed = 120,
+speed = 150,
 direction = 'left',
 width = '100%',
 logoHeight = 28,
