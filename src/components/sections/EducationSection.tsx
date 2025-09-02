@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import Lottie from "lottie-react";
 import { FadeIn } from "@/components/reactbits/fade-in";
-import bookAnimation from "../../../public/Book loading.json";
+import bookAnimation from "../../../public/lottiefiles/Book loading.json";
 
 interface EducationItem {
   id: number;
@@ -49,13 +49,13 @@ export default function EducationSection() {
   const getLogoPath = (id: number) => {
     switch (id) {
       case 3:
-        return "/uni-logo.png"; 
+        return "/logos/uni-logo.png"; 
       case 2:
-        return "/college-logo.png"; 
+        return "/logos/college-logo.png"; 
       case 1:
-        return "/school-logo.png";
+        return "/logos/school-logo.png";
       default:
-        return "/default.png";
+        return "/logos/default.png";
     }
   };
 

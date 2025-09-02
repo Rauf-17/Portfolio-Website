@@ -3,7 +3,7 @@
 import React from "react";
 import Lottie from "lottie-react";
 import { FadeIn } from "@/components/reactbits/fade-in";
-import developerSkillsAnimation from "../../../public/developer skills.json";
+import developerSkillsAnimation from "../../../public/lottiefiles/developer skills.json";
 import {
   SiTypescript,
   SiJavascript,
@@ -82,8 +82,8 @@ const skillCategories: SkillCategory[] = [
       { name: "CSS3", icon: <SiCss3 />, color: "text-[#1572B6]" },
       { name: "PrimeNG", icon: <SiPrimereact />, color: "text-[#DD0031]" },
       { name: "PrimeReact", icon: <SiPrimereact />, color: "text-[#61DAFB]" },
-      { name: "Shadcn UI", icon: <img src="/shadcn-logo.png" alt="Shadcn UI" className="w-5 h-5" />, color: "text-foreground" },
-      { name: "Reactbits", icon: <img src="/react-bits-logo.svg" alt="Reactbits" className="w-5 h-5" />, color: "text-[#61DAFB]" },
+      { name: "Shadcn UI", icon: <img src="/logos/shadcn-logo.png" alt="Shadcn UI" className="w-5 h-5" />, color: "text-foreground" },
+      { name: "Reactbits", icon: <img src="/logos/react-bits-logo.svg" alt="Reactbits" className="w-5 h-5" />, color: "text-[#61DAFB]" },
     ],
   },
   {

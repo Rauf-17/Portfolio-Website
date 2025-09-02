@@ -3,7 +3,7 @@
 import React from "react";
 import Lottie from "lottie-react";
 import { FadeIn } from "@/components/reactbits/fade-in";
-import workingAnimation from "../../../public/Working Online.json";
+import workingAnimation from "../../../public/lottiefiles/Working Online.json";
 
 interface ExperienceItem {
   id: number;
@@ -197,8 +197,8 @@ export default function ExperienceSection() {
 
                           {/* Responsibilities */}
                           <div className="space-y-2 mt-4">
-                            <p className="text-sm font-semibold text-foreground mb-2">
-                              Key Responsibilities:
+                            <p className="text-md font-bold text-cyan-500 mb-2">
+                              Key Responsibilities
                             </p>
                             <ul className="space-y-2">
                               {exp.responsibilities.map((resp, idx) => (
@@ -217,7 +217,7 @@ export default function ExperienceSection() {
                           <div className="absolute top-4 right-4">
                             <div className="w-12 h-12 rounded-full bg-card p-1 flex items-center justify-center text-white font-bold text-sm shadow-lg overflow-hidden border border-border">
                                 <img
-                                    src="/MADD logo.jpg"
+                                    src="/logos/MADD logo.jpg"
                                     alt="MADD Technology"
                                     className="w-full h-full object-cover rounded-full"
                                 />

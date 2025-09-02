@@ -35,7 +35,7 @@ export function AboutSection() {
             <ProfileCard
               name="Raufull Islam Rauf"
               title="Junior Software Engineer"
-              avatarUrl="/Profile.png"
+              avatarUrl="/logos/Profile.png"
               enableTilt={true}
               enableMobileTilt={false}
               className="max-w-md mx-auto"
