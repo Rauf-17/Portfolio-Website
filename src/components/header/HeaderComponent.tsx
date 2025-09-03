@@ -34,7 +34,7 @@ export function HeaderComponent() {
           >
             <div className="relative">
               <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
-                RAUF
+                RAUF.
               </span>
               <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400/20 to-purple-500/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
             </div>

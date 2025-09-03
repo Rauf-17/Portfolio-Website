@@ -4,14 +4,13 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#education", label: "Education" },
-  { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#certificates", label: "Certificates" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", label: "ABOUT" },
+  { href: "#education", label: "EDUCATION" },
+  { href: "#experience", label: "EXPERIENCE" },
+  { href: "#skills", label: "SKILLS" },
+  { href: "#projects", label: "PROJECTS" },
+  { href: "#certificates", label: "CERTIFICATES" },
+  { href: "#contact", label: "CONTACT" },
 ];
 
 export function MobileNav() {
