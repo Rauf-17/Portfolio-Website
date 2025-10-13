@@ -171,7 +171,7 @@ Violet: :root {
   --sidebar-ring: oklch(0.541 0.281 293.009);
 }
 
-
+## **Images**: lottiefiles.com 
 
 
 
