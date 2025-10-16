@@ -4,14 +4,14 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const navItems = [
-  { href: "/", label: "Home", icon: "🏠" },
-  { href: "#about", label: "About", icon: "👤" },
-  { href: "#education", label: "Education", icon: "🎓" },
-  { href: "#experience", label: "Experience", icon: "💼" },
-  { href: "#skills", label: "Skills", icon: "💻" },
-  { href: "#projects", label: "Projects", icon: "📁" },
-  { href: "#blogs", label: "Blogs", icon: "📚" },
-  { href: "#contact", label: "Contact", icon: "✉️" },
+  { href: "/", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#education", label: "Education" },
+  { href: "#experience", label: "Experience" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#blogs", label: "Blogs" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function MobileNav() {
@@ -39,11 +39,11 @@ export function MobileNav() {
   }, [isOpen]);
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden relative z-50">
       {/* Hamburger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative w-10 h-10 flex items-center justify-center rounded-md hover:bg-accent transition-colors"
+        className="relative w-10 h-10 flex items-center justify-center rounded-md hover:bg-accent transition-colors z-50"
         aria-label="Toggle menu"
       >
         <div className="w-5 h-4 flex flex-col justify-between">
@@ -65,42 +65,41 @@ export function MobileNav() {
         </div>
       </button>
 
-      {/* Backdrop */}
+      {/* Backdrop Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30"
           onClick={() => setIsOpen(false)}
         />
       )}
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Panel - Overlay from Right */}
       <div
-        className={`fixed top-16 right-0 bottom-0 w-80 max-w-[85vw] bg-card border-l border-border shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-20 right-3 w-56 bg-card/98 backdrop-blur-2xl border border-border/60 rounded-lg shadow-2xl z-40 transform transition-all duration-300 ease-out ${
+          isOpen ? "translate-x-0 opacity-100 scale-100" : "translate-x-8 opacity-0 scale-95 pointer-events-none"
         }`}
       >
-        <nav className="h-full overflow-y-auto p-6">
+        <nav className="py-3 px-2">
           <div className="space-y-1">
             {navItems.map((item, index) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-accent transition-all duration-200 group animate-in slide-in-from-right"
-                style={{ animationDelay: `${index * 50}ms` }}
+                className="block text-center py-2.5 px-3 rounded-md hover:bg-accent/50 transition-all duration-200 group border border-transparent hover:border-primary/30"
+                style={{ 
+                  animationDelay: `${index * 50}ms`,
+                  opacity: isOpen ? 1 : 0,
+                  transform: isOpen ? 'translateX(0)' : 'translateX(20px)',
+                  transition: `all 0.3s ease-out ${index * 50}ms`
+                }}
               >
-                <span className="text-2xl group-hover:scale-110 transition-transform">
-                  {item.icon}
-                </span>
-                <span className="font-medium text-foreground group-hover:text-primary transition-colors">
+                <span className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
                   {item.label}
                 </span>
               </Link>
             ))}
           </div>
-
-          {/* Decorative gradient at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
         </nav>
       </div>
     </div>
