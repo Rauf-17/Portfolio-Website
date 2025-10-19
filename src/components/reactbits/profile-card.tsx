@@ -59,7 +59,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   name = 'Raufull Islam Rauf',
   title = 'Junior Software Engineer',
   handle = 'Rauf-17',
-  status = 'Online',
+  status = 'Code_Share_Repeat',
   contactText = 'Contact',
   showUserInfo = true,
   onContactClick
