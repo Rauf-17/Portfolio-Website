@@ -27,10 +27,10 @@ interface TextTypeProps {
 export function TextType({
   text,
   as: Component = 'div',
-  typingSpeed = 50,
+  typingSpeed = 75,
   initialDelay = 0,
-  pauseDuration = 2000,
-  deletingSpeed = 30,
+  pauseDuration = 1500,
+  deletingSpeed = 50,
   loop = true,
   className = '',
   showCursor = true,
