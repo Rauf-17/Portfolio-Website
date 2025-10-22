@@ -43,7 +43,7 @@
     background-position: inherit;
     border-radius: inherit;
     transition: all 0.5s ease;
-    filter: contrast(2) saturate(2) blur(36px);
+    filter: contrast(1.5) saturate(0.8) blur(30px); /* reduced contrast, saturation and blur */
     transform: scale(0.8) translate3d(0, 0, 0.1px);
     background-size: 100% 100%;
     background-image: var(--behind-gradient);
@@ -56,21 +56,21 @@
 
 .pc-card-wrapper:hover::before,
 .pc-card-wrapper.active::before {
-    filter: contrast(1) saturate(2) blur(40px) opacity(1);
+    filter: contrast(1) saturate(1) blur(35px) opacity(0.8); /* reduced saturation and opacity */
     transform: scale(0.9) translate3d(0, 0, 0.1px);
 }
 
 .pc-card {
-    height: 72svh; /* reduced from 80svh */
-    max-height: 480px; /* reduced from 540px */
+    height: 72svh;
+    max-height: 480px;
     display: grid;
     aspect-ratio: 0.718;
     border-radius: var(--card-radius);
     position: relative;
     background-blend-mode: color-dodge, normal, normal, normal;
     animation: glow-bg 12s linear infinite;
-    box-shadow: rgba(0, 0, 0, 0.8) calc((var(--pointer-from-left) * 10px) - 3px)
-        calc((var(--pointer-from-top) * 20px) - 6px) 20px -5px;
+    box-shadow: rgba(0, 0, 0, 0.4) calc((var(--pointer-from-left) * 5px) - 2px)
+        calc((var(--pointer-from-top) * 10px) - 3px) 15px -3px; /* reduced shadow spread and blur */
     transition: transform 1s ease;
     transform: translate3d(0, 0, 0.1px) rotateX(0deg) rotateY(0deg);
     background-size: 100% 100%;
@@ -82,14 +82,14 @@
     background-image:
         radial-gradient(
             farthest-side circle at var(--pointer-x) var(--pointer-y),
-            hsla(266, 100%, 90%, var(--card-opacity)) 4%,
-            hsla(266, 50%, 80%, calc(var(--card-opacity) * 0.75)) 10%,
-            hsla(266, 25%, 70%, calc(var(--card-opacity) * 0.5)) 50%,
+            hsla(266, 60%, 85%, calc(var(--card-opacity) * 0.6)) 4%, /* reduced saturation and opacity */
+            hsla(266, 40%, 75%, calc(var(--card-opacity) * 0.5)) 10%, /* reduced saturation and opacity */
+            hsla(266, 20%, 65%, calc(var(--card-opacity) * 0.3)) 50%, /* reduced saturation and opacity */
             hsla(266, 0%, 60%, 0) 100%
         ),
-        radial-gradient(35% 52% at 55% 20%, #00ffaac4 0%, #073aff00 100%),
-        radial-gradient(100% 100% at 50% 50%, #00c1ffff 1%, #073aff00 76%),
-        conic-gradient(from 124deg at 50% 50%, #c137ffff 0%, #07c6ffff 40%, #07c6ffff 60%, #c137ffff 100%);
+        radial-gradient(35% 52% at 55% 20%, #00ffaa80 0%, #073aff00 100%), /* reduced opacity */
+        radial-gradient(100% 100% at 50% 50%, #00c1ffaa 1%, #073aff00 76%), /* reduced opacity */
+        conic-gradient(from 124deg at 50% 50%, #c137ffaa 0%, #07c6ffaa 40%, #07c6ffaa 60%, #c137ffaa 100%); /* reduced opacity */
     overflow: hidden;
 }
 
@@ -122,7 +122,7 @@
     mask-size: 150%;
     mask-position: top calc(200% - (var(--background-y) * 5)) left calc(100% - var(--background-x));
     transition: filter 0.6s ease;
-    filter: brightness(0.66) contrast(1.33) saturate(0.33) opacity(0.5);
+    filter: brightness(0.5) contrast(1.2) saturate(0.2) opacity(0.4); /* reduced brightness, saturation and opacity */
     animation: holo-bg 18s linear infinite;
     mix-blend-mode: color-dodge;
 }
@@ -186,7 +186,7 @@
 
 .pc-card:hover .pc-shine,
 .pc-card.active .pc-shine {
-    filter: brightness(0.85) contrast(1.5) saturate(0.5);
+    filter: brightness(0.7) contrast(1.3) saturate(0.3); /* reduced brightness and saturation */
     animation: none;
 }
 
@@ -208,7 +208,7 @@
             var(--sunpillar-2),
             var(--sunpillar-3)
         ),
-        radial-gradient(circle at var(--pointer-x) var(--pointer-y), hsl(0, 0%, 70%) 0%, hsla(0, 0%, 30%, 0.2) 90%),
+        radial-gradient(circle at var(--pointer-x) var(--pointer-y), hsl(0, 0%, 60%) 0%, hsla(0, 0%, 30%, 0.15) 90%), /* reduced saturation */
         var(--grain);
     background-size:
         250% 250%,
@@ -219,8 +219,8 @@
         center,
         calc(var(--pointer-x) * 0.01) calc(var(--pointer-y) * 0.01);
     background-blend-mode: color-dodge;
-    filter: brightness(calc(2 - var(--pointer-from-center))) contrast(calc(var(--pointer-from-center) + 2))
-        saturate(calc(0.5 + var(--pointer-from-center)));
+    filter: brightness(calc(1.5 - var(--pointer-from-center))) contrast(calc(var(--pointer-from-center) + 1.5))
+        saturate(calc(0.3 + var(--pointer-from-center) * 0.5)); /* reduced brightness and saturation */
     mix-blend-mode: luminosity;
 }
 
@@ -242,11 +242,11 @@
     overflow: hidden;
     background-image: radial-gradient(
         farthest-corner circle at var(--pointer-x) var(--pointer-y),
-        hsl(248, 25%, 80%) 12%,
-        hsla(207, 40%, 30%, 0.8) 90%
+        hsl(248, 15%, 75%) 12%, /* reduced saturation */
+        hsla(207, 25%, 30%, 0.6) 90% /* reduced saturation and opacity */
     );
     mix-blend-mode: overlay;
-    filter: brightness(0.8) contrast(1.2);
+    filter: brightness(0.7) contrast(1.1); /* reduced brightness and contrast */
     z-index: 4;
 }
 

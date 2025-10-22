@@ -44,7 +44,7 @@ const achievementImages = [
         title: "School Sports Certificate - Football (2017)"
     },
     {
-        src: "/achievements/School-Sports-Certificate-Kabadi-2017.jpg",
+        src: "/achievements/kabadi.jpg",
         title: "School Sports Certificate - Kabadi (2017)",
         alt: "School Sports Certificate - Kabadi (2017)"
     }
