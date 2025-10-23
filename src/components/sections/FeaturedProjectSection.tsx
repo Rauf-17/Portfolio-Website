@@ -22,25 +22,28 @@ export default function FeaturedProjectSection() {
       <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header with top-right "View All Projects" button */}
+        {/* Header with "View All Projects" button */}
         <div className="relative mb-16">
-          <Link
-            href="/projects"
-            className="absolute right-0 top-0 inline-flex items-center gap-2 px-4 py-2 rounded-md bg-pink-500/10 hover:bg-pink-500/20 text-pink-500 hover:text-pink-600 border border-pink-200/30 transition-all duration-300"
-            aria-label="View all projects"
-          >
-            View All Projects
-            <ExternalLink className="w-4 h-4" />
-          </Link>
-
           <FadeIn>
             <div className="text-center">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 bg-clip-text text-transparent">
                 Featured Projects
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
                 A showcase of my most impactful and technically challenging work.
               </p>
+              
+              {/* View All Projects Button - Centered on mobile, top-right on desktop */}
+              <div className="flex justify-center md:absolute md:right-0 md:top-0">
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-pink-500/10 hover:bg-pink-500/20 text-pink-500 hover:text-pink-600 border border-pink-200/30 transition-all duration-300"
+                  aria-label="View all projects"
+                >
+                  View All Projects
+                  <ExternalLink className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </FadeIn>
         </div>

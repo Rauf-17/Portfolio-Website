@@ -54,11 +54,11 @@ export default function SingleProject({ params }: SingleProjectProps) {
       <div className="sticky top-6 z-50 px-4 md:px-8 lg:px-16 py-4">
         <FadeIn>
           <Link
-        href="/projects"
-        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-pink-500 bg-card/80 backdrop-blur-md border border-border text-foreground font-semibold hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 group shadow-lg"
+            href="/projects"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-pink-500 bg-card/80 backdrop-blur-md border border-border text-foreground font-semibold hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 group shadow-lg"
           >
-        <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-        Back to projects
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+            Back to projects
           </Link>
         </FadeIn>
       </div>

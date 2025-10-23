@@ -78,12 +78,40 @@ export default function AchievementsSection() {
 
         <FadeIn delay={0.2}>
           <div className="relative">
-            <RollingGallery 
-              autoplay={true} 
-              pauseOnHover={true} 
-              images={achievementImages}
-            />
-            
+            {/* Desktop: RollingGallery, Mobile: Horizontal Scrollable List */}
+            <div className="hidden sm:block">
+              <RollingGallery 
+                autoplay={true} 
+                pauseOnHover={true} 
+                images={achievementImages}
+              />
+            </div>
+            <div className="block sm:hidden">
+              <div className="w-full overflow-x-auto">
+                <div className="flex gap-4 items-center py-2">
+                  {achievementImages.map((img, idx) => (
+                    <div
+                      key={idx}
+                      className="flex-shrink-0"
+                      style={{
+                        width: '160px',
+                        minWidth: '160px',
+                        maxWidth: '90vw',
+                      }}
+                    >
+                      <img
+                        src={img.src}
+                        alt={img.title}
+                        title={img.title}
+                        className="rounded-lg shadow-md w-full h-32 object-cover object-center bg-background"
+                        loading="lazy"
+                      />
+                      <div className="text-xs text-center mt-2 text-muted-foreground line-clamp-2">{img.title}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
             {/* Instruction text */}
             <div className="text-center mt-8">
               <p className="text-md text-muted-foreground">
