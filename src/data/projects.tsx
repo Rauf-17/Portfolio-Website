@@ -24,7 +24,7 @@ export const projects: Project[] = [
     fullDescription: "Neeramoy Desktop is a powerful cross-platform desktop application built with modern web technologies. This application provides an intuitive interface and robust functionality to enhance your productivity. The platform features responsive UI, cross-platform support, offline functionality, data synchronization across devices, customizable themes, convenient keyboard shortcuts, and real-time updates.",
     category: "Desktop Application",
     image: "/projects/neeramoy-desktop.png",
-    technologies: ["Angular", "Node.js", "Electron.js", "SQLite3", "PrimeNG", "TypeScript", "HTML", "CSS", "SCSS"],
+    technologies: ["Angular", "Node.js", "Electron.js", "SQLite3", "PrimeNG", "TypeScript", "AWS", "HTML", "CSS", "SCSS"],
     features: [
       "Responsive UI: Clean and intuitive user interface that adapts to different screen sizes",
       "Cross-platform: Works seamlessly on Windows, macOS, and Linux",
@@ -36,8 +36,8 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/Rauf-17/Neeramoy_Desktop",
     gradient: "from-purple-500 to-pink-500",
-    date: "2024",
-    status: "Present"
+    date: "2025",
+    status: "Completed"
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     fullDescription: "This repository hosts the frontend of a Queue Management System, built using Angular and Node.js. The system aims to streamline and optimize the process of managing queues for various service environments. With real-time updates, customer management, and service desk coordination, this system provides a complete solution for businesses.",
     category: "Full Stack Developer",
     image: "/projects/queue-management-system.png",
-    technologies: ["Angular", "Node.js", "PrimeNG", "TypeScript", "WebSocket"],
+    technologies: ["Angular", "Node.js", "PrimeNG", "TypeScript", "AWS", "CSS3"],
     features: [
       "Modern user interface for queue management",
       "Integration with backend services (Node.js)",
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/Rauf-17/queue-management-system",
     gradient: "from-cyan-500 to-blue-500",
-    date: "2024",
+    date: "2025",
     status: "Present"
   },
   {
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     fullDescription: "A modern and visually stunning portfolio website showcasing my skills, projects, and achievements. Built with the latest web technologies, this site features smooth animations, responsive design, and an intuitive user interface. The neon-themed design creates a unique and memorable browsing experience.",
     category: "Frontend Developer",
     image: "/projects/portfolio.png",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "React"],
+    technologies: ["Next.js", "Tailwind CSS", "Lottie Files", "TypeScript", "React", "PrimeReact", "React Bits", "Shadcn UI", "GSAP"],
     features: [
       "Fully responsive design ensuring smooth experience across desktop, tablet, and mobile",
       "Smooth animations and transitions powered by Framer Motion",
@@ -81,8 +81,8 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Rauf-17/Portfolio-Website",
     liveUrl: "https://portfolio-demo.com",
     gradient: "from-orange-500 to-red-500",
-    date: "2024",
-    status: "Present"
+    date: "2025",
+    status: "Completed"
   },
   {
     id: 4,
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     fullDescription: "Popular Furniture is a comprehensive e-commerce platform dedicated to showcasing, managing, and selling popular and trending furniture items. Built with Laravel and modern web technologies, this platform provides a robust solution for furniture businesses with advanced features like role management, automated backups, and secure API authentication.",
     category: "Full Stack Developer",
     image: "/projects/popular-furniture.png",
-    technologies: ["PHP", "Laravel", "MySQL", "Passport", "Redis", "JavaScript"],
+    technologies: ["PHP", "Laravel", "MySQL", "Alpine.js", "Chart.js", "Passport", "Redis", "JavaScript"],
     features: [
       "User and Admin Authentication: Multiple guards for users and admins, with session and API token support",
       "Role & Permission Management: Roles and permissions managed through Eloquent models",
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     liveUrl: "https://popularfurniturebd.com/",
     gradient: "from-green-500 to-emerald-500",
     date: "2023",
-    status: "Present"
+    status: "Completed"
   },
   {
     id: 5,
@@ -132,7 +132,7 @@ export const projects: Project[] = [
   {
     id: 6,
     slug: "padma-bridge-3d-visualization",
-    title: "Padma Bridge - 3D Visualization",
+    title: "Architecture Marvels: Padma Bridge",
     shortDescription: "A 3D graphical representation of Bangladesh's iconic Padma Bridge using C++ and OpenGL. Features multiple environmental scenarios (day, night, rain), animated vehicles and boats, interactive scene switching, and real-time rendering.",
     fullDescription: "Architecture Marvel - Padma Bridge is a Computer Graphics final term project visualizing the iconic Padma Bridge in Bangladesh using C++ and OpenGL (FreeGLUT). This project demonstrates fundamental and intermediate computer graphics techniques such as 2D/3D drawing, transformations, basic animation, and scene management.",
     category: "Computer Graphics",
@@ -147,6 +147,7 @@ export const projects: Project[] = [
       "Real-time Animation: Smooth animations with frame-by-frame rendering"
     ],
     githubUrl: "https://github.com/Rauf-17/Computer-Graphics/tree/main/Architecture%20Marvel-%20Padma%20Bridge",
+    liveUrl: "https://youtu.be/pL4MIvXCCr8",
     gradient: "from-blue-500 to-cyan-500",
     date: "2023",
     status: "Completed"

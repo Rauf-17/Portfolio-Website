@@ -37,6 +37,21 @@ export function MobileNav() {
     };
   }, [isOpen]);
 
+  const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+    const id = href.replace(/^#/, "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      // update the hash without jumping
+      history.replaceState(null, "", `#${id}`);
+    } else {
+      // fallback: set location hash so browser tries to navigate
+      window.location.hash = href;
+    }
+  };
+
   return (
     <div className="md:hidden relative z-50">
       {/* Hamburger Button */}
@@ -80,24 +95,46 @@ export function MobileNav() {
       >
         <nav className="py-3 px-2">
           <div className="space-y-1">
-            {navItems.map((item, index) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="block text-center py-2.5 px-3 rounded-md hover:bg-accent/50 transition-all duration-200 group border border-transparent hover:border-primary/30"
-                style={{ 
+            {navItems.map((item, index) => {
+              const commonProps = {
+                className:
+                  "block text-center py-2.5 px-3 rounded-md hover:bg-accent/50 transition-all duration-200 group border border-transparent hover:border-primary/30",
+                style: {
                   animationDelay: `${index * 50}ms`,
                   opacity: isOpen ? 1 : 0,
-                  transform: isOpen ? 'translateX(0)' : 'translateX(20px)',
-                  transition: `all 0.3s ease-out ${index * 50}ms`
-                }}
-              >
-                <span className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
-                  {item.label}
-                </span>
-              </Link>
-            ))}
+                  transform: isOpen ? "translateX(0)" : "translateX(20px)",
+                  transition: `all 0.3s ease-out ${index * 50}ms`,
+                } as React.CSSProperties,
+              };
+
+              if (item.href.startsWith("#")) {
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleHashClick(e, item.href)}
+                    {...commonProps}
+                  >
+                    <span className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
+                      {item.label}
+                    </span>
+                  </a>
+                );
+              }
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  {...commonProps}
+                >
+                  <span className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
+                    {item.label}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </nav>
       </div>

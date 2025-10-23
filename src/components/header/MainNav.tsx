@@ -14,12 +14,30 @@ const navItems = [
 ];
 
 export function MainNav() {
+	const handleClick = (href: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+		if (href.startsWith("#")) {
+			e.preventDefault();
+			const id = href.slice(1);
+			const el = document.getElementById(id);
+			if (el) {
+				el.scrollIntoView({ behavior: "smooth", block: "start" });
+				// update the hash without jumping
+				history.replaceState(null, "", href);
+			} else {
+				// fallback: set the hash
+				window.location.hash = href;
+			}
+		}
+		// otherwise let Next.js Link handle navigation
+	};
+
 	return (
 		<nav className="hidden md:flex items-center gap-8">
 			{navItems.map((item) => (
 				<Link
 					key={item.href}
 					href={item.href}
+					onClick={(e) => handleClick(item.href, e)}
 					className="text-sm font-semibold text-foreground/70 hover:text-foreground transition-colors duration-200 relative group"
 				>
 					{item.label}

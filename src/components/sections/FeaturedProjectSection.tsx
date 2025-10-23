@@ -26,7 +26,7 @@ export default function FeaturedProjectSection() {
         <div className="relative mb-16">
           <Link
             href="/projects"
-            className="absolute right-0 top-0 inline-flex items-center gap-2 px-4 py-2 rounded-md bg-muted hover:bg-primary/10 text-primary border border-border transition-all duration-300"
+            className="absolute right-0 top-0 inline-flex items-center gap-2 px-4 py-2 rounded-md bg-pink-500/10 hover:bg-pink-500/20 text-pink-500 hover:text-pink-600 border border-pink-200/30 transition-all duration-300"
             aria-label="View all projects"
           >
             View All Projects
@@ -49,14 +49,14 @@ export default function FeaturedProjectSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredProjects.map((project, index) => (
             <FadeIn key={project.id} delay={0.1 + index * 0.1}>
-              <Link href={`/projects/${project.slug}`}>
-                <div className="group relative h-full cursor-pointer">
-                  <div className="relative overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-primary/10 group-hover:-translate-y-2 h-full flex flex-col">
-                    {/* Gradient Background Effect */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+              <div className="group relative h-full">
+                <div className="relative overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-primary/10 group-hover:-translate-y-2 h-full flex flex-col">
+                  {/* Gradient Background Effect */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
 
-                    {/* Project Image */}
-                    <div className="relative w-full h-48 bg-muted overflow-hidden">
+                  {/* Project Image - Clickable */}
+                  <Link href={`/projects/${project.slug}`}>
+                    <div className="relative w-full h-48 bg-muted overflow-hidden cursor-pointer">
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -64,74 +64,77 @@ export default function FeaturedProjectSection() {
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
+                  </Link>
 
-                    {/* Project Content */}
-                    <div className="relative p-6 flex flex-col flex-grow">
-                      {/* Title */}
-                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                  {/* Project Content */}
+                  <div className="relative p-6 flex flex-col flex-grow">
+                    {/* Title - Clickable */}
+                    <Link href={`/projects/${project.slug}`}>
+                      <h3 className="text-xl font-bold text-foreground mb-3 hover:text-primary transition-colors duration-300 cursor-pointer">
                         {project.title}
                       </h3>
+                    </Link>
 
-                      {/* Description */}
-                      <p className="text-sm text-muted-foreground mb-4 line-clamp-3 flex-grow">
-                        {project.shortDescription}
-                      </p>
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-3 flex-grow">
+                      {project.shortDescription}
+                    </p>
 
-                      {/* Technologies */}
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.technologies.slice(0, 5).map((tech, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors duration-300"
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.slice(0, 5).map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors duration-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 5 && (
+                        <span className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
+                          +{project.technologies.length - 5}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Links */}
+                    <div className="flex items-center justify-between pt-4 border-t border-border">
+                      <div className="flex gap-3">
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-lg bg-muted hover:bg-primary/10 hover:text-primary transition-all duration-300 group/icon"
+                            aria-label="View on GitHub"
                           >
-                            {tech}
-                          </span>
-                        ))}
-                        {project.technologies.length > 5 && (
-                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
-                            +{project.technologies.length - 5}
-                          </span>
+                            <Github className="w-5 h-5 group-hover/icon:scale-110 transition-transform duration-300" />
+                          </a>
+                        )}
+                        {project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-lg bg-muted hover:bg-primary/10 hover:text-primary transition-all duration-300 group/icon"
+                            aria-label="View Live Project"
+                          >
+                            <ExternalLink className="w-5 h-5 group-hover/icon:scale-110 transition-transform duration-300" />
+                          </a>
                         )}
                       </div>
 
-                      {/* Links */}
-                      <div className="flex items-center justify-between pt-4 border-t border-border">
-                        <div className="flex gap-3">
-                          {project.githubUrl && (
-                            <a
-                              href={project.githubUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                              className="p-2 rounded-lg bg-muted hover:bg-primary/10 hover:text-primary transition-all duration-300 group/icon"
-                              aria-label="View on GitHub"
-                            >
-                              <Github className="w-5 h-5 group-hover/icon:scale-110 transition-transform duration-300" />
-                            </a>
-                          )}
-                          {project.liveUrl && (
-                            <a
-                              href={project.liveUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                              className="p-2 rounded-lg bg-muted hover:bg-primary/10 hover:text-primary transition-all duration-300 group/icon"
-                              aria-label="View Live Project"
-                            >
-                              <ExternalLink className="w-5 h-5 group-hover/icon:scale-110 transition-transform duration-300" />
-                            </a>
-                          )}
-                        </div>
-
-                        <span className="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:text-primary/80 transition-colors duration-300">
-                          View Details
-                          <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                        </span>
-                      </div>
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-300 group/link"
+                      >
+                        View Details
+                        <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform duration-300" />
+                      </Link>
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             </FadeIn>
           ))}
         </div>

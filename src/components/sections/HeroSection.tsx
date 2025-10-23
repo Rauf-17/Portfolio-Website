@@ -255,7 +255,7 @@ const techLogos = [
                                             <span className="text-foreground/70">.</span>
                                             <span className="text-cyan-400">length</span>{" "}
                                             <span className="text-pink-400">{">="}</span>{" "}
-                                            <span className="text-purple-400">11</span>
+                                            <span className="text-purple-400">15</span>
                                         </div>
                                         <div className="pl-8">
                                             <span className="text-yellow-400">);</span>
