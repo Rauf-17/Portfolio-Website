@@ -1,143 +1,217 @@
-<<<<<<< HEAD
-# Portfolio Website
+# Portfolio Website — Raufull Islam Rauf
 
-A modern portfolio website built with Next.js 15, TypeScript, and Tailwind CSS v4.
+A modern, interactive portfolio website showcasing projects, skills, and professional experience. Built with Next.js 15, TypeScript, and cutting-edge web technologies.
 
-## Tech Stack
+🌐 **Live Site**: [raufislam.me](https://raufislam.me)
 
-- **Framework**: Next.js 15.5.3 with App Router
+## ✨ Features
+
+- 🎨 Stunning 3D tilt-effect profile card with holographic animations
+- 🌓 Dark/Light theme support with smooth transitions
+- 📱 Fully responsive design for all devices
+- ⚡ Optimized performance with Next.js App Router
+- 🎭 GSAP-powered smooth animations
+- 🔍 SEO-optimized with proper metadata
+- 📊 Integrated Vercel Analytics
+- ♿ Accessible UI components
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 15.5.3 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
 - **Animations**: GSAP 3.13.0
-- **Component Libraries**:
-  - PrimeReact
-  - Shadcn UI
-  - ReactBits
+- **UI Components**:
+  - PrimeReact (UI component library)
+  - Shadcn UI (Accessible components)
+  - ReactBits (Custom components)
+- **Icons**: PrimeIcons
+- **Analytics**: Vercel Analytics
+- **Font**: Inter (Google Fonts)
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 portfolio/
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx       # Root layout with metadata
-│   │   ├── page.tsx         # Home page
-│   │   ├── globals.css      # Global styles with Tailwind v4
+│   │   ├── layout.tsx           # Root layout with metadata & providers
+│   │   ├── page.tsx             # Home page
+│   │   ├── globals.css          # Global styles with Tailwind v4
 │   │   └── favicon.ico
 │   ├── components/
-│   │   ├── reactbits/       # ReactBits components
-│   │   ├── primereact/      # PrimeReact components
-│   │   └── shadcn/          # Shadcn UI components
+│   │   ├── reactbits/           # Custom React components
+│   │   │   ├── profile-card.tsx # Animated profile card
+│   │   │   └── profile-card.css # Card styles
+│   │   ├── header/              # Header component
+│   │   ├── footer/              # Footer & scroll-to-top
+│   │   ├── theming/             # Theme provider
+│   │   ├── primereact/          # PrimeReact components
+│   │   └── shadcn/              # Shadcn UI components
 │   └── lib/
-│       └── utils.ts         # Utility functions
-├── public/                  # Static assets
+│       └── utils.ts             # Utility functions
+├── public/                      # Static assets
+├── LICENSE                      # MIT License
 └── package.json
 ```
 
-## Component Organization
+## 🛠️ Getting Started
 
-Components are organized into three main folders:
+### Prerequisites
 
-### 1. ReactBits (`src/components/reactbits/`)
-Custom React components and utilities
+- Node.js 18+ installed
+- npm, yarn, pnpm, or bun package manager
 
-### 2. PrimeReact (`src/components/primereact/`)
-PrimeReact component wrappers and customizations
+### Installation
 
-### 3. Shadcn (`src/components/shadcn/`)
-Shadcn UI components
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Rauf-17/Portfolio-Website.git
+   cd Portfolio-Website
+   ```
 
-## Getting Started
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-### Install dependencies
+3. **Run development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+### Build & Deploy
+
 ```bash
-npm install
-```
-
-### Run development server
-```bash
-npm run dev
-```
-
-### Build for production
-```bash
+# Build for production
 npm run build
-```
 
-### Start production server
-```bash
+# Start production server locally
 npm start
+
+# Lint code
+npm run lint
 ```
 
-## Development
-
-- Each component folder has an `index.ts` file for easy imports
-- Use Tailwind CSS v4 classes for styling
-- Follow TypeScript best practices
-- Keep components modular and reusable
-
-## Features
-
-- ✅ Next.js 15 with App Router
-- ✅ TypeScript support
-- ✅ Tailwind CSS v4 with custom theme
-- ✅ Dark mode ready
-- ✅ GSAP animations
-- ✅ PrimeReact integration
-- ✅ Organized component structure
-- ✅ Optimized for production
-
-## Customization
+## 🎨 Customization
 
 ### Theme Colors
-Edit `src/app/globals.css` to customize the color scheme:
-- Light mode colors in `:root`
-- Dark mode colors in `.dark`
 
-### Fonts
-Update font imports in `src/app/layout.tsx`
+Edit `src/app/globals.css` to customize colors:
 
-### Metadata
-Update SEO metadata in `src/app/layout.tsx`
+```css
+:root {
+  /* Light mode colors */
+  --background: #ffffff;
+  --foreground: #000000;
+}
 
-## License
-
-MIT
-=======
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+.dark {
+  /* Dark mode colors */
+  --background: #000000;
+  --foreground: #ffffff;
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Profile Card
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Customize the profile card in `src/components/reactbits/profile-card.tsx`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```tsx
+<ProfileCard
+  avatarUrl="/your-avatar.png"
+  name="Your Name"
+  title="Your Title"
+  enableTilt={true}
+  showBehindGradient={true}
+/>
+```
 
-## Learn More
+### Metadata & SEO
 
-To learn more about Next.js, take a look at the following resources:
+Update SEO settings in `src/app/layout.tsx`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```tsx
+export const metadata: Metadata = {
+  title: "Your Name | Portfolio",
+  description: "Your custom description",
+};
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎯 Component Organization
 
-## Deploy on Vercel
+### ReactBits Components
+Custom interactive components with advanced animations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### PrimeReact Components
+Pre-built UI components with consistent theming
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
->>>>>>> ae9b7fb7ca1d2dd6dba756aa5e7d061da0572365
+### Shadcn Components
+Accessible, customizable UI primitives
+
+## 📦 Environment Variables
+
+Create a `.env.local` file for environment-specific configuration:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://raufislam.me
+NEXT_PUBLIC_ANALYTICS_ID=your-analytics-id
+```
+
+**Note**: Never commit `.env.local` to version control
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Push code to GitHub
+2. Import project in [Vercel](https://vercel.com)
+3. Deploy automatically
+
+### Other Platforms
+
+This Next.js app can be deployed to any platform supporting Node.js:
+- Netlify
+- AWS Amplify
+- Railway
+- Render
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Raufull Islam Rauf**  
+Junior Software Engineer
+
+- Website: [raufislam.me](https://raufislam.me)
+- GitHub: [@Rauf-17](https://github.com/Rauf-17)
+
+## 🙏 Acknowledgments
+
+- Next.js team for the amazing framework
+- Vercel for hosting and analytics
+- PrimeReact, Shadcn UI, and the open-source community
+
+---
+
+⭐ If you found this project helpful, please consider giving it a star!
