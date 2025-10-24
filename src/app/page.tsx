@@ -7,14 +7,9 @@ import ExperienceSection from "@/components/sections/ExperienceSection";
 import SkillSection from "@/components/sections/SkillSection";
 import FeaturedProjectSection from "@/components/sections/FeaturedProjectSection";
 import AchievementsSection from "@/components/sections/AchievementsSection";
+import ContactSection from "@/components/sections/ContactSection";
 
-export default async function Home({
-  params,
-  searchParams,
-}: {
-  params: Promise<{ slug: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}) {
+export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <HeroSection />
@@ -24,6 +19,7 @@ export default async function Home({
       <SkillSection />
       <FeaturedProjectSection />
       <AchievementsSection />
+      <ContactSection />
     </main>
   );
 }

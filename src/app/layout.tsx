@@ -4,6 +4,8 @@ import "./globals.css";
 import "primeicons/primeicons.css";
 import { ThemeProvider } from "@/components/theming/theme-provider";
 import { HeaderComponent } from "@/components/header/HeaderComponent";
+import Footer from "@/components/footer/footer";
+import ScrollToTop from "@/components/footer/scroll-to-top";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,6 +28,8 @@ export default function RootLayout({
         <ThemeProvider>
           <HeaderComponent />
           {children}
+          <Footer />
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
