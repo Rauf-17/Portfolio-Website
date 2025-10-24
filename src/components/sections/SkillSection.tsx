@@ -2,7 +2,7 @@
 
 import React from "react";
 import Lottie from "lottie-react";
-import { FadeIn } from "@/components/reactbits/fade-in";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/reactbits/fade-in";
 import developerSkillsAnimation from "../../../public/lottiefiles/developer skills.json";
 import {
   SiTypescript,
@@ -160,9 +160,9 @@ export default function SkillSection() {
           </FadeIn>
 
           {/* Right Side - Skill Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-auto">
-            {skillCategories.map((category, index) => (
-              <FadeIn key={category.id} delay={0.3 + index * 0.1}>
+          <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-auto">
+            {skillCategories.map((category) => (
+              <StaggerItem key={category.id}>
                 <div className="group relative h-full">
                   <div className="relative overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-primary/10 group-hover:-translate-y-1 h-full flex flex-col">
                     {/* Gradient Background Effect */}
@@ -198,9 +198,9 @@ export default function SkillSection() {
                     </div>
                   </div>
                 </div>
-              </FadeIn>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </div>
     </section>

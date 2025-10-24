@@ -42,65 +42,76 @@ export function AboutSection() {
             />
           </FadeIn>
 
-          {/* About Content */}
-          <FadeIn delay={0.4}>
+            {/* About Content */}
+            <FadeIn delay={0.4}>
             <div className="space-y-6">
               <div className="space-y-4">
-                <ShinyText
-                  text="Passionate Web Developer — Frontend & Backend"
-                  speed={5}
-                  className="text-lg bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
-                />
+              <ShinyText
+              text="Passionate Web Developer — Frontend & Backend"
+              speed={5}
+              className="text-lg bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
+              />
 
-                <p className="text-lg leading-relaxed text-foreground/90">
-                  I'm <span className="font-semibold text-foreground bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Raufull Islam Rauf</span>, a
-                  Web Developer and Junior Software Engineer at{" "}
-                  <span className="font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-                    MADD Technology
-                  </span>
-                  . I craft responsive, user-friendly interfaces using{" "}
-                  <span className="font-semibold text-primary">Angular</span>,{" "}
-                  <span className="font-semibold text-primary">React</span>, and{" "}
-                  <span className="font-semibold text-primary">Tailwind CSS</span>.
-                </p>
+              <p className="text-lg leading-relaxed text-foreground/90">
+              I'm <span className="font-semibold text-foreground bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Raufull Islam Rauf</span>, a
+              Web Developer and Junior Software Engineer at{" "}
+              <span className="font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+              MADD Technology
+              </span>
+              . I craft responsive, user-friendly interfaces using{" "}
+              <span className="font-semibold text-primary">Angular</span>,{" "}
+              <span className="font-semibold text-primary">React</span>, and{" "}
+              <span className="font-semibold text-primary">Tailwind CSS</span>.
+              </p>
 
-                <p className="text-lg leading-relaxed text-foreground/90">
-                  On the back end I enjoy building robust solutions with{" "}
-                  <span className="font-semibold bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">
-                    Node.js
-                  </span>{" "}
-                  and{" "}
-                  <span className="font-semibold bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">
-                    PHP
-                  </span>
-                  . I also use tools like Cpanel, PostgreSQL, and MongoDB to deliver scalable,
-                  maintainable systems that prioritize performance and clean architecture.
-                </p>
+              {/* Split the backend paragraph so stats appear immediately after Node.js and PHP */}
+              <p className="text-lg leading-relaxed text-foreground/90">
+              On the back end I enjoy building robust solutions with{" "}
+              <span className="font-semibold bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">
+              Node.js
+              </span>{" "}
+              and{" "}
+              <span className="font-semibold bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">
+              PHP
+              </span>.
+              </p>
+              <div className="text-lg leading-relaxed text-foreground/90 mb-1">
+                I also have experience working as a{" "}
+                <span className="font-semibold bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">
+                  Software Requirements Analyst
+                </span>
+                , performing{" "}
+                <span className="font-semibold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+                  Business Requirements Analysis
+                </span>
+                , and serving as a{" "}
+                <span className="font-semibold bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">
+                  Scrum Master / Project Lead.
+                </span>
               </div>
-
-              {/* Stats or Highlights */}
               <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
-                <div className="text-center space-y-1">
-                    <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">
-                        1+
-                    </div>
-                    <div className="text-sm text-muted-foreground">Years Experience</div>
+              <div className="text-center space-y-1">
+                <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">
+                1+
                 </div>
-                <div className="text-center space-y-1">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
-                    Fast
-                  </div>
-                  <div className="text-sm text-muted-foreground">Learner</div>
+                <div className="text-sm text-muted-foreground">Years Experience</div>
+              </div>
+              <div className="text-center space-y-1">
+                <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+                Quick
                 </div>
-                <div className="text-center space-y-1">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">
-                    100%
-                  </div>
-                  <div className="text-sm text-muted-foreground">Dedicated</div>
+                <div className="text-sm text-muted-foreground">Learner</div>
+              </div>
+              <div className="text-center space-y-1">
+                <div className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">
+                100%
                 </div>
+                <div className="text-sm text-muted-foreground">Dedicated</div>
+              </div>
+              </div>
               </div>
             </div>
-          </FadeIn>
+            </FadeIn>
         </div>
       </div>
 

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { FadeIn } from "@/components/reactbits/fade-in";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/reactbits/fade-in";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import { projects } from "@/data/projects";
@@ -46,9 +46,9 @@ export default function FeaturedProjectSection() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredProjects.map((project, index) => (
-            <FadeIn key={project.id} delay={0.1 + index * 0.1}>
+        <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredProjects.map((project) => (
+            <StaggerItem key={project.id}>
               <div className="group relative h-full">
                 <div className="relative overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-primary/10 group-hover:-translate-y-2 h-full flex flex-col">
                   {/* Gradient Background Effect */}
@@ -135,9 +135,9 @@ export default function FeaturedProjectSection() {
                   </div>
                 </div>
               </div>
-            </FadeIn>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

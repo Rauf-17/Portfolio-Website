@@ -79,7 +79,7 @@ export const projects: Project[] = [
       "Fast-loading performance using modern optimization techniques"
     ],
     githubUrl: "https://github.com/Rauf-17/Portfolio-Website",
-    liveUrl: "https://portfolio-demo.com",
+    liveUrl: "https://raufislam.me",
     gradient: "from-orange-500 to-red-500",
     date: "2025",
     status: "Completed"
@@ -109,6 +109,60 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    slug: "erp-solution",
+    title: "ERP Solution",
+    shortDescription: "A comprehensive Enterprise Resource Planning system built with PHP and modern web technologies. Features complete business management tools including inventory, sales, HR, and accounting modules with cPanel hosting integration.",
+    fullDescription: "ERP Solution is an enterprise-grade resource planning system designed to streamline business operations. Built with PHP and modern frameworks, this solution provides comprehensive modules for managing inventory, sales, human resources, accounting, and customer relationships. The system integrates seamlessly with cPanel for easy deployment and management.",
+    category: "Backend Developer",
+    image: "/projects/erp.png",
+    technologies: ["PHP", "React", "AngularJS", "RequireJS", "MySQL", "Cpanel"],
+    features: [
+      "Complete business management suite with multiple integrated modules",
+      "Inventory management with real-time stock tracking and alerts",
+      "Sales and order processing with automated invoicing",
+      "Human resource management including payroll and attendance",
+      "Accounting module with financial reporting and analytics",
+      "Customer relationship management (CRM) integration",
+      "Role-based access control for different user levels",
+      "cPanel integration for easy hosting and deployment",
+      "Responsive dashboard with real-time data visualization",
+      "Multi-language and multi-currency support"
+    ],
+    githubUrl: "https://github.com/Rauf-17",
+    liveUrl: "https://erp.maddtechbd.com",
+    gradient: "from-indigo-500 to-purple-500",
+    date: "2024",
+    status: "Completed"
+  },
+  {
+    id: 6,
+    slug: "madd-technology-website",
+    title: "MADD Technology Website",
+    shortDescription: "A modern corporate website for MADD Technology built with Angular and TypeScript. Features responsive design, elegant UI with Google Fonts and Font Awesome icons, and optimized performance for showcasing company services and portfolio.",
+    fullDescription: "MADD Technology Website is a professional corporate web presence built with Angular and modern web technologies. The website showcases the company's services, portfolio, and expertise in software development and IT solutions. With a clean, modern design and intuitive navigation, the site provides an excellent user experience across all devices.",
+    category: "Frontend Developer",
+    image: "/projects/madd-web.png",
+    technologies: ["Angular", "TypeScript", "Laravel", "PHP", "Bootstrap", "MySQL"],
+    features: [
+      "Fully responsive design optimized for all screen sizes",
+      "Modern and professional UI with smooth animations",
+      "Service showcase with detailed descriptions and visuals",
+      "Portfolio section highlighting completed projects",
+      "Company information and team profiles",
+      "Contact form with email integration",
+      "SEO-optimized for better search engine visibility",
+      "Fast loading with lazy loading and code optimization",
+      "Cross-browser compatibility",
+      "Interactive elements with engaging user experience"
+    ],
+    githubUrl: "https://github.com/Rauf-17",
+    liveUrl: "https://maddtechbd.com/",
+    gradient: "from-teal-500 to-green-500",
+    date: "2025",
+    status: "Completed"
+  },
+  {
+    id: 7,
     slug: "pc-builder-component-shopping",
     title: "PC Builder & Component Shopping",
     shortDescription: "A comprehensive Windows desktop application for building custom PCs and shopping computer components. Features role-based access control with Admin, Staff, and Buyer roles, product management, order tracking, and inventory management.",
@@ -130,7 +184,7 @@ export const projects: Project[] = [
     status: "Completed"
   },
   {
-    id: 6,
+    id: 8,
     slug: "padma-bridge-3d-visualization",
     title: "Architecture Marvels: Padma Bridge",
     shortDescription: "A 3D graphical representation of Bangladesh's iconic Padma Bridge using C++ and OpenGL. Features multiple environmental scenarios (day, night, rain), animated vehicles and boats, interactive scene switching, and real-time rendering.",
