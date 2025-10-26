@@ -4,13 +4,13 @@ import React from "react";
 import Link from "next/link";
 
 const navItems = [
-	{ href: "#about", label: "ABOUT" },
-	{ href: "#education", label: "EDUCATION" },
-	{ href: "#experience", label: "EXPERIENCE" },
-	{ href: "#skills", label: "SKILLS" },
+	{ href: "/#about", label: "ABOUT" },
+	{ href: "/#education", label: "EDUCATION" },
+	{ href: "/#experience", label: "EXPERIENCE" },
+	{ href: "/#skills", label: "SKILLS" },
 	{ href: "/projects", label: "PROJECTS" },
-	{ href: "#achievements", label: "ACHIEVEMENTS" },
-	{ href: "#contact", label: "CONTACT" },
+	{ href: "/#achievements", label: "ACHIEVEMENTS" },
+	{ href: "/#contact", label: "CONTACT" },
 ];
 
 export function MainNav() {
